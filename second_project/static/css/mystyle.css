@@ -1,9 +1,6 @@
 h1 {
     color: red
 }
-table, th, td {
-    border: 2px solid black
-}
-td {
+ul {
     border: 1px solid black
 }

@@ -11,25 +11,23 @@
 </head>
 <body>
     <h1>Hi! Welcome to Django Level Two!</h1>
-    <h2>Here are your access records:</h2>
+    <h2>Here are your user names:</h2>
 
     <div class="djangotwo">
-        {% if access_records %}
-        <table>
-            <thead>
-                <th>Site Name</th>
-                <th>Date Accessed</th>
-            </thead>
-
-            {% for acc in access_records %}
-            <tr>
-                <td>{{ acc.name }}</td>
-                <td>{{ acc.date }}</td>
-            </tr>
+        {% if users %}
+        <ol>
+            {% for u in users %}
+                <li><em>User Info</em>
+                <ul>
+                    <li>First Name: {{ u.first_name }}</li>
+                    <li>Last Name: {{ u.last_name }}</li>
+                    <li>Email: {{ u.e_mail }}</li>
+                </ul>
+                </li>
             {% endfor %}
-        </table>
+        </ol>
         {% else %}
-            <p>No access records found!</p>
+        <p>No access records found!</p>
         {% endif %}
     </div>
 
